@@ -3,8 +3,8 @@ const currency = document.getElementById("currency");
 const convert = document.getElementById("convert");
 const result = document.getElementById("result");
 
-const apiKey = "Bg1lS1Bzefd1ocrQ1rIsOg==jWcbuvlfWQXMm29e";
-const apiUrl = "https://api.api-ninjas.com/v1/exchangerate?pair=USD";
+const apiKey = "Bg1lS1Bzefd1ocrQ1rIsOg==jWcbuvlfWQXMm29e"
+const apiUrl = "https://api.api-ninjas.com/v1/exchangerate?pair=GBP_";
 
 convert.addEventListener("click", () => {
   const amountTotal = amount.value;
@@ -18,12 +18,12 @@ convert.addEventListener("click", () => {
   })
     .then(response => response.json())
     .then(data => {
-      const rate = data.rate;
-      const result = amountTotal * rate;
-      result.innerHTML = `${amount} ${currency} = ${result.toFixed(2)} USD`;
+      const rate = data.exchange_rate;
+      const calculatedResult = amountTotal * rate; // Rename result to calculatedResult
+      result.innerHTML = `${amountTotal} ${currencyTotal} = ${calculatedResult.toFixed(2)} USD`; // Use calculatedResult here
     })
     .catch(error => {
         console.error('Request failed:', error)
-        result.innerHTML= "An error has occured, please try again later"
+        result.innerHTML = "An error has occurred, please try again later";
     })
 });

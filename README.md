@@ -4,7 +4,7 @@ This Chrome extension allows users to convert between different currencies using
 
 ## Features
 
-- Convert between various currencies.
+- Convert USD to 4 currencies: AUD, CHF, GBD, DKK
 - Real-time exchange rates.
 - Simple and easy-to-use interface.
 
